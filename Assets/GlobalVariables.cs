@@ -1,26 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 using UnityEditor;
 using UnityEngine;
 
-public class GlobalVariables : MonoBehaviour {
+public class GlobalVariables : MonoBehaviour
+{
 
     public GameObject pauseMenuUI;
     static public bool objectSelected = false;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pauseMenuUI.SetActive(true);
-            
+
         }
 
     }
@@ -47,7 +48,7 @@ public class GlobalVariables : MonoBehaviour {
         GameObject clone = Instantiate(prefab, Vector3.zero, Quaternion.identity) as GameObject;
 
         clone.transform.position = Vector3.one;
-          
+
     }
 
     static void ShapeInsertedIntoPuzzelBox()
