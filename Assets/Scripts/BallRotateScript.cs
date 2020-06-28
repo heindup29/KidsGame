@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class BallRotateScript : MonoBehaviour
 {
@@ -20,15 +19,15 @@ public class BallRotateScript : MonoBehaviour
         {
             Touch[] myTouch = Input.touches;
 
-            if (myTouch[0].phase == TouchPhase.Began  && GlobalVariables.objectSelected != true)
+            if (myTouch[0].phase == TouchPhase.Began && GlobalVariables.objectSelected != true)
             {
                 objectTransform.Rotate(rotationalDirectionAndReturnEuler(myTouch[0].deltaPosition), Space.World);
             }
-            else if (myTouch[0].phase == TouchPhase.Moved  && GlobalVariables.objectSelected != true)
+            else if (myTouch[0].phase == TouchPhase.Moved && GlobalVariables.objectSelected != true)
             {
                 objectTransform.Rotate(rotationalDirectionAndReturnEuler(myTouch[0].deltaPosition), Space.World);
             }
-            else if (myTouch[0].phase == TouchPhase.Ended  && GlobalVariables.objectSelected != true)
+            else if (myTouch[0].phase == TouchPhase.Ended && GlobalVariables.objectSelected != true)
             {
                 objectTransform.Rotate(rotationalDirectionAndReturnEuler(myTouch[0].deltaPosition), Space.World);
             }
@@ -38,10 +37,10 @@ public class BallRotateScript : MonoBehaviour
 
     private Vector3 rotationalDirectionAndReturnEuler(Vector2 deltaPositionOfObject)
     {
-        return new Vector3(deltaPositionOfObject.y * xOffset,0, 0 - deltaPositionOfObject.x* yOffset);
-        
+        return new Vector3(deltaPositionOfObject.y * xOffset, 0, 0 - deltaPositionOfObject.x * yOffset);
+
     }
 
 
-    
+
 }
